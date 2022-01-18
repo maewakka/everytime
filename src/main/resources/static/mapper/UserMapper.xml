@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hongbro.everytime.mapper.UserMapper">
+
+<!--    <select id="findAll" resultType="Member">-->
+<!--        select * from user_test-->
+<!--    </select>-->
+
+<!--    <insert id="joinMember" parameterType="Member">-->
+<!--        insert into user_test(userId, userName) values (#{userId}, #{userName})-->
+<!--    </insert>-->
+
+    <insert id="signupUser" parameterType="User">
+        insert into User(userID, userPW, userEmail) values (#{userID}, #{userPW}, #{userEmail})
+    </insert>
+
+</mapper>
