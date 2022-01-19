@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>findallUser</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>아이디</th>
+            <th>비밀번호</th>
+            <th>이메일</th>
+        </tr>
+        <tr th:each="userList : ${userList}">
+            <td th:text="${userList.userID}"></td>
+            <td th:text="${userList.userPW}"></td>
+            <td th:text="${userList.userEmail}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

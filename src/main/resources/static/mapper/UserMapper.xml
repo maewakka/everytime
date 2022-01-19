@@ -14,4 +14,8 @@
         insert into User(userID, userPW, userEmail) values (#{userID}, #{userPW}, #{userEmail})
     </insert>
 
+    <select id="findallUser" resultType="User">
+        select * from User
+    </select>
+
 </mapper>
