@@ -1,53 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/css/loginForm/login.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css">
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-    <title>Login</title>
+     <title>Login</title>
 </head>
-
-<body class="text-center">
-    <main class="form-signin">
-        <form>
-            <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="title">Welcome Everytime!</div>
+            <div class="form_class">
+                <form>
+                    <div class="label">
+                        <label>아이디</label>
+                    </div>
+                    <div>
+                        <input type="text" id="userID" name="userID">
+                    </div>
+                    <div class="label">
+                        <label>비밀번호</label>
+                    </div>
+                    <div>
+                        <input type="password" id="userPW" name="userPW">
+                    </div>
+                </form>
             </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+            <div class="forget_password">
+                <div class="href" id="forget_password">비밀번호를 잊으셨나요?</div>
             </div>
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
+            <button class="login_button">로그인</button>
+            <div class="sign_up">
+                <div class="text">계정이 필요한가요?</div>
+                <div class="href" id="signin">가입하기</div>
             </div>
-            <div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            </div>
-            <div class="create-account"><a href="/LoginForm/signup">Create an account</a></div>
-            <p class="mt-5 mb-3 text-muted">&copy; Made by hongbro</p>
-        </form>
-    </main>
+        </div>
+    </div>
 </body>
+<script src="/static/js/loginForm/login.js"></script>
 </html>
