@@ -11,11 +11,19 @@
 <!--    </insert>-->
 
     <insert id="signupUser" parameterType="User">
-        insert into User(userID, userPW, userEmail) values (#{userID}, #{userPW}, #{userEmail})
+        insert into User(userID, userName, userPW, userPhone) values (#{userID}, #{userName}, #{userPW}, #{userPhone})
     </insert>
 
     <select id="findallUser" resultType="User">
         select * from User
+    </select>
+
+    <select id="idCheck" parameterType="String" resultType="int">
+        select count(*) from User where userID=#{userID}
+    </select>
+
+    <select id="phoneCheck" parameterType="String" resultType="int">
+        select count(*) from User where userPhone=#{userPhone}
     </select>
 
 </mapper>

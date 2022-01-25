@@ -14,7 +14,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/static/image/test2.jpg");
+    background-image: url("/static/image/login_background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -9,6 +9,10 @@ import java.util.List;
 public interface UserMapper {
 
     void signupUser(User user);
+
     List<User> findallUser();
+
+    int idCheck(String userID);
+    int phoneCheck(String userPhone);
 
 }

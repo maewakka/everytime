@@ -5,13 +5,10 @@ import hongbro.everytime.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class LoginFormController {
@@ -38,11 +35,21 @@ public class LoginFormController {
 
     @PostMapping("/LoginForm/signup/submit")
     public String signup_submit(@ModelAttribute User user) {
-
-        System.out.println("Signup user, id is " + user.getUserID() + " , email is" + user.getUserEmail());
-
         userService.SignUp(user);
-
         return "redirect:/";
+    }
+
+    @RequestMapping("/LoginForm/signup/dupCheck")
+    @ResponseBody
+    public boolean dup_Check(@RequestBody Map userInfo) {
+        if(userService.dupCheck(userInfo)) {
+            return true;
+        }
+        return  false;
+    }
+
+    @RequestMapping("/LoginForm/login/loginCheck")
+    public String loginCheck() {
+        return "/LoginForm/login";
     }
 }
